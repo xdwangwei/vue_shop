@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.ConsigneeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.ConsigneeEntity" id="consigneeMap">
+        <result property="cgnId" column="cgn_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="cgnName" column="cgn_name"/>
+        <result property="cgnAddress" column="cgn_address"/>
+        <result property="cgnTel" column="cgn_tel"/>
+        <result property="cgnCode" column="cgn_code"/>
+        <result property="deleteTime" column="delete_time"/>
+    </resultMap>
+
+
+</mapper>

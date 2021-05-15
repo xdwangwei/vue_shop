@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.Report3Dao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.Report3Entity" id="report3Map">
+        <result property="id" column="id"/>
+        <result property="rp3Src" column="rp3_src"/>
+        <result property="rp3Count" column="rp3_count"/>
+        <result property="rp3Date" column="rp3_date"/>
+    </resultMap>
+
+
+</mapper>

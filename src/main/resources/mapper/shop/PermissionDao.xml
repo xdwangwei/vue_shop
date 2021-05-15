@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.PermissionDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.PermissionEntity" id="permissionMap">
+        <result property="psId" column="ps_id"/>
+        <result property="psName" column="ps_name"/>
+        <result property="psPid" column="ps_pid"/>
+        <result property="psC" column="ps_c"/>
+        <result property="psA" column="ps_a"/>
+        <result property="psLevel" column="ps_level"/>
+    </resultMap>
+
+    <select id="limitList" resultType="com.vivi.vue.shop.entity.PermissionEntity">
+        select ps_id, ps_name, ps_pid, ps_c, ps_a, ps_level
+        from sp_permission
+        where ps_id in
+        <foreach collection="psIds" item="psId" open="(" close=")" separator=",">
+            #{psId}
+        </foreach>
+    </select>
+
+
+</mapper>

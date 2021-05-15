@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.GoodsDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.GoodsEntity" id="goodsMap">
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <result property="goodsNumber" column="goods_number"/>
+        <result property="goodsWeight" column="goods_weight"/>
+        <result property="catId" column="cat_id"/>
+        <result property="goodsIntroduce" column="goods_introduce"/>
+        <result property="goodsBigLogo" column="goods_big_logo"/>
+        <result property="goodsSmallLogo" column="goods_small_logo"/>
+        <result property="isDel" column="is_del"/>
+        <result property="addTime" column="add_time"/>
+        <result property="updTime" column="upd_time"/>
+        <result property="deleteTime" column="delete_time"/>
+        <result property="catOneId" column="cat_one_id"/>
+        <result property="catTwoId" column="cat_two_id"/>
+        <result property="catThreeId" column="cat_three_id"/>
+        <result property="hotNumber" column="hot_number"/>
+        <result property="isPromote" column="is_promote"/>
+        <result property="goodsState" column="goods_state"/>
+    </resultMap>
+
+
+</mapper>

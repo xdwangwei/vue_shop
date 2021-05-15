@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.PermissionApiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.PermissionApiEntity" id="permissionApiMap">
+        <result property="id" column="id"/>
+        <result property="psId" column="ps_id"/>
+        <result property="psApiService" column="ps_api_service"/>
+        <result property="psApiAction" column="ps_api_action"/>
+        <result property="psApiPath" column="ps_api_path"/>
+        <result property="psApiOrder" column="ps_api_order"/>
+    </resultMap>
+
+
+</mapper>

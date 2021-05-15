@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vivi.vue.shop.dao.CategoryDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.vivi.vue.shop.entity.CategoryEntity" id="categoryMap">
+        <result property="catId" column="cat_id"/>
+        <result property="catName" column="cat_name"/>
+        <result property="catPid" column="cat_pid"/>
+        <result property="catLevel" column="cat_level"/>
+        <result property="catDeleted" column="cat_deleted"/>
+        <result property="catIcon" column="cat_icon"/>
+        <result property="catSrc" column="cat_src"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vue_shop?useSSL=FALSE&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  # 404请求时抛出异常
+  mvc:
+    throw-exception-if-no-handler-found: true
+  # 取消默认增加映射，如 /error
+  resources:
+    add-mappings: false
+  servlet:
+    # 文件上传大小限制
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+server:
+  port: 8999
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      # 逻辑删除字段
+      logic-delete-field: catDeleted
+      # 逻辑删除后的值
+      logic-delete-value: 1
+      # 逻辑未删除的值
+      logic-not-delete-value: 0
+# 设置日志等级
+logging:
+  level:
+    com.vivi.vue.shop.dao: debug
+
+# oss
+alibaba:
+  cloud:
+    access-key: LTAI4GEuwDujE6GZrti7e6RK
+    secret-key: tn2I8DBYSRFL3ZMPVxMJ8OBuZgPrFw
+    oss:
+      endpoint: oss-cn-beijing.aliyuncs.com
+      bucket: vivi-vue-shop
+#      https://vivi-vue-shop.oss-cn-beijing.aliyuncs.com/children-fishing-the-activity-asia-thumb.jpg
+      urlPrefix: https://${alibaba.cloud.oss.bucket}.${alibaba.cloud.oss.endpoint}/
