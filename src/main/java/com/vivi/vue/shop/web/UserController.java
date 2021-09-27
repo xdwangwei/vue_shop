@@ -70,8 +70,8 @@ public class UserController {
      */
     @PutMapping("/users/{id}")
     public R update(@PathVariable("id") Integer id,
-                    @RequestParam(value = "mobile", defaultValue = "") String mobile,
-                    @RequestParam(value = "email", defaultValue = "") String email){
+                    String mobile,
+                    String email){
         UserVO vo = managerService.updateInfo(id, mobile, email);
         return R.ok().setMsg("更新成功").setData(vo);
     }

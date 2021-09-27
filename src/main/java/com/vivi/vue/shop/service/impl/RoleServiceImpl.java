@@ -18,6 +18,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
@@ -60,6 +61,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleDao, RoleEntity> implements
         return collect;
     }
 
+    @Transactional
     @Override
     public RoleVO add(RoleVO roleVO) {
         RoleEntity entity = new RoleEntity();
@@ -70,6 +72,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleDao, RoleEntity> implements
             entity.setRoleDesc(roleVO.getRoleName());
         }
         this.save(entity);
+        int a = 1 / 0;
         return convertRoleEntity2RoleVO(this.getById(entity.getRoleId()));
     }
 

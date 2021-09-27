@@ -14,7 +14,7 @@ import java.util.List;
 public class UserListPageVO {
 
     // 总记录数
-    private Integer totalpage;
+    private Integer total;
 
     // 当前页码
     private Integer pagenum;

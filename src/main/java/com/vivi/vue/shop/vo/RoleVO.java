@@ -17,11 +17,13 @@ public class RoleVO {
      * 角色id
      */
     private Integer roleId;
+
     /**
      * 角色名称
      */
     @NotBlank(message = "'roleName' 字段不能为空")
     private String roleName;
+
     /**
      * 角色描述
      */

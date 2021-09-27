@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -15,6 +14,7 @@ import java.util.Map;
  * @author Mark sunlightcs@gmail.com
  */
 public class Query<T> {
+
 
     public IPage<T> getPage(Map<String, Object> params) {
         return this.getPage(params, null, false);

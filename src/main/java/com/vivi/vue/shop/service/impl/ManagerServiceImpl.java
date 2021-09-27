@@ -58,7 +58,7 @@ public class ManagerServiceImpl extends ServiceImpl<ManagerDao, ManagerEntity> i
         );
         // 封装返回结果
         resp.setPagenum((int) page.getCurrent());
-        resp.setTotalpage((int) page.getTotal());
+        resp.setTotal((int) page.getTotal());
         List<UserVO> collect = page.getRecords().stream().map(member -> convertMemberEntity2User(member)).collect(Collectors.toList());
         resp.setUsers(collect);
         return resp;
@@ -104,6 +104,12 @@ public class ManagerServiceImpl extends ServiceImpl<ManagerDao, ManagerEntity> i
 
     @Override
     public UserVO updateInfo(Integer uid, String mobile, String email) {
+        if (StringUtils.isEmpty(mobile)) {
+            throw new BizException(BizCodeEnum.BAD_REQUEST, "'mobile'不能为空");
+        }
+        if (StringUtils.isEmpty(email)) {
+            throw new BizException(BizCodeEnum.BAD_REQUEST, "'email'不能为空");
+        }
         ManagerEntity managerEntity = new ManagerEntity();
         managerEntity.setMgId(uid);
         managerEntity.setMgEmail(email);
